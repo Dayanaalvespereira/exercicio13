@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>Digite os números separados por vírgulas::</p>
+
+<input type="text" id="inputNumbers">
+<button onclick="calculateSoma()">Calculate Soma</button>
+
+<p id="Soma"></p>
+
+<script>
+function calculateSoma() {
+  const input = document.getElementById("inputNumbers").value;
+  const numbers = input.split(",").map(parseFloat);
+
+  const soma = numbers.reduce(getSoma, 0);
+  document.getElementById("Soma").innerHTML = soma;
+}
+
+function getSoma(total, num) {
+  return total + Math.round(num);
+}
+</script>
+
+</body>
+</html>
+
